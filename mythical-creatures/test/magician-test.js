@@ -4,12 +4,12 @@ var Magician = require('../exercises/magician');
 describe('Magician', function() {
 // Oh no! It looks like there's no text in the `it` blocks! I guess you'll have to read the tests SUPER carefully to know what the test is expecting!
 
-it('', function() {
+it('should be a function', function() {
     assert.isFunction(Magician);
     assert.instanceOf(new Magician({}), Magician);
   });
 
-it('', function() {
+it('should have a name', function() {
     var magician1 = new Magician({ name: 'Scott' });
     var magician2 = new Magician({ name: 'Casey' });
 
@@ -17,7 +17,7 @@ it('', function() {
     assert.equal(magician2.name, 'The Great Casey');
   });
 
-it('', function() {
+it('should have a boolean assistant field', function() {
     var magician1 = new Magician({ name: 'Scott', assistant: true });
     var magician2 = new Magician({ name: 'Casey', assistant: false });
 
@@ -28,19 +28,19 @@ it('', function() {
     assert.equal(magician2.assistant, false);
   });
 
-it('', function() {
+it('should have a default favoriteAccessory of top hat', function() {
     var magician = new Magician({ name: 'Scott' });
 
     assert.equal(magician.favoriteAccessory, 'top hat');
   });
 
-it('', function() {
+it('it should assign clothing to favoriteAccessory', function() {
     var magician = new Magician({ name: 'Casey', clothing: 'cape' });
 
     assert.equal(magician.favoriteAccessory, 'cape')
   });
 
-it('', function() {
+it('upcase incantations', function() {
     var magician = new Magician({ name: 'Scott' });
 
     var spell = magician.performIncantation('abracadabra');
@@ -50,7 +50,7 @@ it('', function() {
     assert.equal(charm, 'ALLAKAZAAM!');
   });
 
-it('', function() {
+it('pull rabbits from its favoriteaccessory', function() {
     var magician1 = new Magician({ name: 'Hannah' });
     var magician2 = new Magician({ name: 'Kayla', clothing: 'top hat' });
 
@@ -59,9 +59,7 @@ it('', function() {
 
     assert.equal(spell1, 'PULL RABBIT FROM TOP HAT');
     assert.equal(spell2, 'PULL RABBIT FROM TOP HAT');
-  });
 
-it('', function() {
     var magician = new Magician({ name: 'Leta', clothing: 'cape' });
 
     var spell = magician.performTrick();
@@ -69,13 +67,13 @@ it('', function() {
     assert.equal(spell, 'PULL RABBIT FROM CAPE');
   });
 
-it('', function() {
+it('should have a confidencePercentage field', function() {
     var magician = new Magician({ name: 'Leta' });
 
     assert.equal(magician.confidencePercentage, 10);
   });
 
-it('', function() {
+it('performing tricks increases confidence by 10', function() {
     var magician = new Magician({ name: 'Leta' });
 
     magician.performTrick();
@@ -89,10 +87,10 @@ it('', function() {
     assert.equal(magician.confidencePercentage, 50);
   });
 
-it('', function() {
+it('performShowStopper returns a different string if confidence is < 90', function() {
     var magician = new Magician({ name: 'Scott', assistant: true });
 
-    assert.equal(magician.performShowStopper(), 'Oh no, this trick is not ready!');
+      assert.equal(magician.performShowStopper(), 'Oh no, this trick is not ready!');
 
     for (var i = 0; i < 8; i++) {
       magician.performTrick();
