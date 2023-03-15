@@ -4,7 +4,7 @@ var assert = require('chai').assert;
 
 describe("Person", function() {
 
-  it.skip('should have a name and a dog', function() {
+  it('should have a name and a dog', function() {
     var luna = new Dog({ name: 'Luna', age: 3 });
     var trisha = new Person('Trisha', luna);
 
@@ -13,24 +13,24 @@ describe("Person", function() {
     assert.equal(trisha.dog.name, 'Luna');
   })
 
-  it.skip('should be able to have no dog', function() {
+  it('should be able to have no dog', function() {
     var dawn = new Person('Dawn');
 
     assert.equal(dawn.dog, undefined);
   })
 
-  it.skip('should feed dog', function() {
+  it('should feed dog', function() {
     var toph = new Dog({ name: 'Toph', age: 2.5});
     var nick = new Person('Nick', toph);
 
-    assert.equal(toph.hungry, true);
+      assert.equal(toph.hungry, true);
 
     nick.fillFoodBowl();
 
     assert.equal(toph.hungry, false);
   })
 
-  it.skip('should play with dog', function() {
+  it('should play with dog', function() {
     var wren = new Dog({ name: 'Wren', age: 5});
     var leah = new Person('Leah', wren);
     var toph = new Dog({ name: 'Toph', age: 2.5});
